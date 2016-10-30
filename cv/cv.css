@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    display:flex;
+    align-items: center;
+    background: white;
+
+    font-family: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 12pt;
+    text-align: left;
+}
+
+.content {
+    margin: auto;
+    padding: 0 3em 0 3em;
+    max-width: 45em;
+    width: 100%;
+    background: white;
+}
+
+p {
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+
+    font-size: 14pt;
+    line-height: 1.5;
+    text-indent: 10px;
+}
+
+span.label {
+    width: 5em;
+    float: left;
+}
+
+p.sub {
+    margin: 0;
+    padding: 10px 10px 10px 20px;
+
+    font-size: 14pt;
+    line-height: 1.5;
+    text-indent: 0px;
+}
+
+
+h1 {
+    font-size: 24pt;
+    border-bottom: 3px solid #afa;
+
+    margin: 0;
+    padding: 40px 20px 5px 20px;
+
+    font-weight: 500;
+}
+
+h2 {
+    page-break-before: always;
+    margin: 0;
+    padding: 10px 20px 5px 20px;
+
+    border-bottom: 2px solid #afa;
+
+    font-size: 18pt;
+    font-weight: 500;
+}
+
+h3 {
+    margin: 0 0 0 20px;
+    padding: 20px 20px 5px 0px;
+
+    border-bottom: 2px solid #afa;
+
+    font-size: 16pt;
+    font-weight: normal;
+}
+
+p.foot {
+    margin: 0;
+    padding: 0px 10px 40px 10px;
+
+    color: gray;
+    font-size: 14pt;
+    text-align: right;
+    background: none;
+    border-top: 1px solid #afa;
+}

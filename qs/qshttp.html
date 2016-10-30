@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuickSearchDemo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <link href="/qs/quicksearch.css" rel="stylesheet">
+    <script>
+function updateResults(serverResponse) {
+    var response = JSON.parse(serverResponse);
+
+    var summary = "";
+    if (response.items.length > 0) {
+        summary += "<ul>";
+        for (i = 0; i < response.items.length; i++) {
+            if (i % 2 == 1) {
+                summary += "<li class='odd'>";
+            } else {
+                summary += "<li class='even'>";
+            }
+
+            summary += response.items[i].item;
+            summary += "</li>\n"
+        }
+        summary += "</ul>";
+        document.getElementById('searchbox').className= "";
+    } else if (document.getElementById('searchbox').value != "") {
+        document.getElementById('searchbox').className= "empty";
+    }
+
+    document.getElementById('results').innerHTML = summary;
+}
+
+function doSearch() {
+    var inputField = document.getElementById('searchbox');
+    var url = "http://api.zigurs.com/search/movies/querydetailed?query=" + inputField.value + "&limit=10";
+
+    var xhttp;
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            updateResults(this.responseText);
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function updateStats(responseText) {
+    var response = JSON.parse(responseText);
+
+    var stats = "";
+
+    if (response != null) {
+        stats = response.items + " items and " + response.fragments + " fragments";
+    }
+
+    document.getElementById('stats').innerHTML = stats;
+}
+
+function loadStats() {
+    var url = "http://api.zigurs.com/search/movies/stats";
+
+    var xhttp;
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            updateStats(this.responseText);
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function init() {
+    document.getElementById('searchbox').addEventListener('input', doSearch);
+    loadStats();
+    document.getElementById('searchbox').focus();
+}
+   </script>
+</head>
+<body onload="init();">
+<div class="content">
+    <div class="inputcontainer">
+        <input placeholder="Start typing here..." id="searchbox"/>
+    </div>
+    <div id="results"></div>
+    <p id="stats">&nbsp;</p>
+    <h1>Quick Search demo</h1>
+    <p>Search for a movie based on its name.</p>
+    <p>Uses http and vanilla javascript only.</p>
+    <p><a href="quicksearch.html">Back to websockets version</a>.</p>
+    <p class="foot">Karlis Zigurs, 2016</p>
+</div>
+</body>
+</html>

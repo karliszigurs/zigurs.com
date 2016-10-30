@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuickSearchDemo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <link href="/qs/quicksearch.css" rel="stylesheet">
+    <script src="/qs/js/jquery.min.js"></script>
+    <script src="/qs/js/sockjs.min.js"></script>
+    <script src="/qs/js/stomp.min.js"></script>
+    <script src="/quicksearch.js"></script>
+</head>
+<body>
+<div class="content">
+    <div class="inputcontainer">
+        <input placeholder="Start typing here..." id="searchbox"/>
+    </div>
+    <div id="results"></div>
+    <p id="stats">&nbsp;</p>
+    <h1>Quick Search demo</h1>
+    <p>Example dataset lets you search for a movie based on its name.</p>
+    <p>Uses websockets for communications with server. Http alternative <a href="/qs/qshttp.html">here</a>.</p>
+    <p>Source code and further instructions can be found on <a
+            href="https://github.com/karliszigurs/QuickSearch">GitHub</a>.</p>
+    <p class="foot">Karlis Zigurs, 2016</p>
+</div>
+</body>
+</html>

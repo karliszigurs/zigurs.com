@@ -1,0 +1,81 @@
+.content {
+    margin-top: 0;
+}
+
+.inputcontainer {
+    margin: -3px -3px 0 -3px;
+    padding: 0.3em;
+    border: 3px solid #afa;
+    background: #efe;
+    display: block;
+}
+
+input {
+    margin: 0;
+    padding: 0.5em;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: Georgia, Serif;
+    font-size: 14pt;
+    background: white;
+    border: 1px solid black;
+    -webkit-appearance:none;
+    -webkit-border-radius:0;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+input.empty {
+    background: #ffeeee;
+}
+
+#results {
+    margin: 0 0.5em 1em 0.5em;
+    padding: 0;
+    position: absolute;
+    max-width: 44em;
+    box-shadow: 0px 4px 6px 0px rgba(0,255,0,0.25);
+}
+
+#results ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+
+    border-top: none;
+    border-left: 3px solid #0f0;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+#results ul li {
+    margin: 0;
+    padding: 0.5em 1em 0.5em 1em;
+    text-justify: -0.5em;
+    font-size: 16pt;
+    line-height: 1.5;
+}
+
+#results ul li.odd {
+    background: #efe;
+}
+
+#results ul li.even {
+    background-color: #fff;
+}
+
+span.score {
+    color: #efefef;
+}
+
+p#stats {
+    text-align: right;
+    font-size: 10pt;
+    font-style: italic;
+    color: gray;
+}
+
+
