@@ -30,14 +30,14 @@ function showStats(responseBody) {
 
 function sendQueryRequest(query) {
     stompClient.send("/query", {}, JSON.stringify(
-            {'store' : 'movies', 'query': query, 'limit' : 10}
+            {'query': query, 'limit' : 10}
         )
     );
 }
 
 function sendStatsRequest() {
     stompClient.send("/stats", {}, JSON.stringify(
-            {'store' : 'movies'}
+            {}
         )
     );
 }

@@ -35,7 +35,7 @@ function updateResults(serverResponse) {
 
 function doSearch() {
     var inputField = document.getElementById('searchbox');
-    var url = "http://api.zigurs.com/search/movies/queryDetailed?query=" + inputField.value + "&limit=10";
+    var url = "http://api.zigurs.com/search/queryDetailed?query=" + inputField.value + "&limit=10";
 
     var xhttp;
     xhttp=new XMLHttpRequest();
@@ -61,7 +61,7 @@ function updateStats(responseText) {
 }
 
 function loadStats() {
-    var url = "http://api.zigurs.com/search/movies/stats";
+    var url = "http://api.zigurs.com/search/stats";
 
     var xhttp;
     xhttp=new XMLHttpRequest();
