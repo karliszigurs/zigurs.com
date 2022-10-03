@@ -8,17 +8,14 @@ body {
     display: flex;
 }
 
-.content {
-    margin: auto;
-    padding: 0;
-}
-
 .vertical {
-    margin: 0;
+    margin: auto;
     position: absolute;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);}
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 
 p {
     margin: 0;
